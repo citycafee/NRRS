@@ -1,0 +1,9 @@
+{
+  "name": "brls-local",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Somaliland NGO Registration and Renewing System(NRRS) - local demo",
+  "scripts": {
+    "start": "node server.js"
+  }
+}
