@@ -1,0 +1,24 @@
+{
+  "name": "nrrs-somaliland",
+  "version": "1.0.0",
+  "private": true,
+  "description": "NGO Registration and Renewing System (NRRS) — Somaliland MoPND. Name search, registration, operating permits and annual renewals with invoice → ZAAD/eDAHAB payment → multi-stage officer approval → issued certificates.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": [
+    "nrrs",
+    "ngo",
+    "registration",
+    "renewal",
+    "somaliland",
+    "mopnd",
+    "government",
+    "workflow"
+  ],
+  "license": "UNLICENSED"
+}

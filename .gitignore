@@ -1,0 +1,16 @@
+# Runtime state — auto-seeded with demo data on first run, never committed
+data/
+
+# Dependencies (this project is zero-dependency, but just in case)
+node_modules/
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS / editor noise
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.tmp
