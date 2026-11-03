@@ -1,9 +1,0 @@
-==========================================================
-  Somaliland NRRS — local demo running
-  URL:        http://localhost:3000  (bound to 127.0.0.1)
-  Applicant:  applicant@brls.local  / demo123
-  Officers:   tech@brls.local senior@brls.local
-              director@brls.local ag@brls.local
-              minister@brls.local / officer123
-  Dev mail:   http://localhost:3000/#/mailbox
-==========================================================
