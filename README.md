@@ -36,10 +36,10 @@ npx serve .            # or:  python -m http.server 8000
 |------------------------|--------------|------------------------|
 | Applicant              | `demo123`    | `applicant@brls.local` |
 | NGO Technical Officer  | `officer123` | `tech@brls.local`      |
-| Senior NGO Officer     | `officer123` | `senior@brls.local`    |
+| Senior NGO Officer     | `officer123` | `senior@nrrs.local`    |
 | Director of NGOs       | `officer123` | `director@brls.local`  |
-| Registrar of NGOs (AG) | `officer123` | `ag@brls.local`        |
-| Minister (MoPND)       | `officer123` | `minister@brls.local`  |
+| Registrar of NGOs (AG) | `officer123` | `ag@nrrs.local`        |
+| Minister (MoPND)       | `officer123` | `minister@nrrs.local`  |
 
 The sign-in page has clickable demo chips that fill these in for you.
 

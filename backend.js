@@ -133,7 +133,16 @@ var NRRS_BACKEND = (function () {
     catch (e) { db = freshDb(); usedSeed = true; }
     if (!db.counters) db.counters = { app: 1, inv: 1, reg: 1, cert: 1, lic: 1 };
     if (!db.sessions) db.sessions = {};
+    /* demo officers senior/ag/minister moved from @brls.local to @nrrs.local —
+       rename them in browsers that were seeded before the change */
+    var moved = { 'senior@brls.local': 'senior@nrrs.local', 'ag@brls.local': 'ag@nrrs.local', 'minister@brls.local': 'minister@nrrs.local' };
+    var renamed = false;
+    db.users.forEach(function (u) {
+      var to = moved[u.email];
+      if (to && !db.users.some(function (x) { return x.email === to; })) { u.email = to; renamed = true; }
+    });
     if (usedSeed) { seedDemo(); save(); }
+    else if (renamed) save();
   }
   function nextId(key, prefix) {
     var n = db.counters[key]++;
@@ -453,10 +462,10 @@ var NRRS_BACKEND = (function () {
       return u;
     };
     mkUser('tech@brls.local', 'NGO Technical Officer', 'tech_officer');
-    mkUser('senior@brls.local', 'Senior NGO Officer', 'senior_officer');
+    mkUser('senior@nrrs.local', 'Senior NGO Officer', 'senior_officer');
     mkUser('director@brls.local', 'Director of NGOs', 'director');
-    mkUser('ag@brls.local', 'Registrar of NGOs', 'ag');
-    mkUser('minister@brls.local', 'Minister of Planning & National Development', 'minister');
+    mkUser('ag@nrrs.local', 'Registrar of NGOs', 'ag');
+    mkUser('minister@nrrs.local', 'Minister of Planning & National Development', 'minister');
 
     var pw = hashPassword('demo123');
     db.users.push({

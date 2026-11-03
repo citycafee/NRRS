@@ -305,10 +305,10 @@ async function pageLogin(el) {
         <div class="demo-chips">
           <span class="chip" data-e="applicant@brls.local" data-p="demo123">applicant@brls.local / demo123</span>
           <span class="chip" data-e="tech@brls.local" data-p="officer123">tech@ (NGO Technical Officer)</span>
-          <span class="chip" data-e="senior@brls.local" data-p="officer123">senior@</span>
+          <span class="chip" data-e="senior@nrrs.local" data-p="officer123">senior@nrrs.local (Senior NGO Officer)</span>
           <span class="chip" data-e="director@brls.local" data-p="officer123">director@</span>
-          <span class="chip" data-e="ag@brls.local" data-p="officer123">ag@ (Registrar of NGOs)</span>
-          <span class="chip" data-e="minister@brls.local" data-p="officer123">minister@</span>
+          <span class="chip" data-e="ag@nrrs.local" data-p="officer123">ag@nrrs.local (Registrar of NGOs)</span>
+          <span class="chip" data-e="minister@nrrs.local" data-p="officer123">minister@nrrs.local (Minister)</span>
         </div>
         <p class="hint mt2">No account yet? <a href="#/register"><b>Create your NGO portal account</b></a></p>
       </div>
