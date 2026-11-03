@@ -18,20 +18,15 @@ function money(n)   { return 'USD ' + Number(n).toFixed(2); }
 function go(h) { location.hash = h; }
 
 async function api(path, opts = {}) {
-  const headers = { 'Content-Type': 'application/json' };
-  if (S.token) headers.Authorization = 'Bearer ' + S.token;
-  const res = await fetch(path, {
-    method: opts.method || 'GET', headers,
-    body: opts.body !== undefined ? JSON.stringify(opts.body) : undefined
-  });
-  let data = null;
-  try { data = await res.json(); } catch (e) { /* empty body */ }
-  if (!res.ok) {
-    const err = new Error((data && data.error) || res.statusText || 'Request failed');
-    err.status = res.status;
+  /* The whole backend runs in the browser (backend.js) — no network calls.
+     Same contract as the original server: { status, body } with body.error on failure. */
+  const r = NRRS_BACKEND.handle(opts.method || 'GET', path, opts.body, S.token);
+  if (r.status >= 400) {
+    const err = new Error((r.body && (r.body.error || r.body.message)) || 'Request failed');
+    err.status = r.status;
     throw err;
   }
-  return data;
+  return r.body;
 }
 function setToken(t) {
   S.token = t;
@@ -216,7 +211,7 @@ async function pageHome(el) {
   el.innerHTML = `
     <section class="hero">
       <div style="position:relative;z-index:1">
-        <img class="hero-mot" src="/assets/logo-motit.png" alt="Government of Somaliland" />
+        <img class="hero-mot" src="assets/logo-motit.png" alt="Government of Somaliland" />
         <h1>Registering NGOs Made Easier</h1>
         <p class="lp-kicker">NGO Registration and Renewing System(NRRS)</p>
         <p>A unified system for NGO registration and renewal in Somaliland —
@@ -228,7 +223,7 @@ async function pageHome(el) {
           <a class="btn sec" href="#/login">LOGIN</a>
         </div>
       </div>
-      <img class="hero-logo" src="/assets/logo-brls.png" alt="NRRS" />
+      <img class="hero-logo" src="assets/logo-brls.png" alt="NRRS" />
     </section>
 
     <div class="lp-band">

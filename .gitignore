@@ -1,4 +1,5 @@
-# Runtime state — auto-seeded with demo data on first run, never committed
+# Legacy runtime state from the old Node server (unused — data now lives in
+# the browser's localStorage). Kept ignored so it is never committed.
 data/
 
 # Dependencies (this project is zero-dependency, but just in case)
