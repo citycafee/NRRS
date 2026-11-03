@@ -133,9 +133,16 @@ var NRRS_BACKEND = (function () {
     catch (e) { db = freshDb(); usedSeed = true; }
     if (!db.counters) db.counters = { app: 1, inv: 1, reg: 1, cert: 1, lic: 1 };
     if (!db.sessions) db.sessions = {};
-    /* demo officers senior/ag/minister moved from @brls.local to @nrrs.local —
+    /* all demo accounts (officers + applicant) now live under @nrrs.local —
        rename them in browsers that were seeded before the change */
-    var moved = { 'senior@brls.local': 'senior@nrrs.local', 'ag@brls.local': 'ag@nrrs.local', 'minister@brls.local': 'minister@nrrs.local' };
+    var moved = {
+      'applicant@brls.local': 'applicant@nrrs.local',
+      'tech@brls.local': 'tech@nrrs.local',
+      'senior@brls.local': 'senior@nrrs.local',
+      'director@brls.local': 'director@nrrs.local',
+      'ag@brls.local': 'ag@nrrs.local',
+      'minister@brls.local': 'minister@nrrs.local'
+    };
     var renamed = false;
     db.users.forEach(function (u) {
       var to = moved[u.email];
@@ -461,20 +468,20 @@ var NRRS_BACKEND = (function () {
       db.users.push(u);
       return u;
     };
-    mkUser('tech@brls.local', 'NGO Technical Officer', 'tech_officer');
+    mkUser('tech@nrrs.local', 'NGO Technical Officer', 'tech_officer');
     mkUser('senior@nrrs.local', 'Senior NGO Officer', 'senior_officer');
-    mkUser('director@brls.local', 'Director of NGOs', 'director');
+    mkUser('director@nrrs.local', 'Director of NGOs', 'director');
     mkUser('ag@nrrs.local', 'Registrar of NGOs', 'ag');
     mkUser('minister@nrrs.local', 'Minister of Planning & National Development', 'minister');
 
     var pw = hashPassword('demo123');
     db.users.push({
-      id: uid(), email: 'applicant@brls.local', fullName: 'Amina Yusuf', role: 'applicant',
+      id: uid(), email: 'applicant@nrrs.local', fullName: 'Amina Yusuf', role: 'applicant',
       salt: pw.salt, hash: pw.hash, verified: true, phone: '+252 63 444 1234',
       nationalId: 'SL-0987654', createdAt: new Date().toISOString(), fcmToken: null
     });
 
-    var owner = db.users.find(function (u) { return u.email === 'applicant@brls.local'; });
+    var owner = db.users.find(function (u) { return u.email === 'applicant@nrrs.local'; });
     var issued = new Date();
     var exp = new Date(issued.getFullYear() + 1, issued.getMonth(), issued.getDate());
     db.registry.push({

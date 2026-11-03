@@ -303,10 +303,10 @@ async function pageLogin(el) {
         </form>
         <label>Demo accounts — click to fill</label>
         <div class="demo-chips">
-          <span class="chip" data-e="applicant@brls.local" data-p="demo123">applicant@brls.local / demo123</span>
-          <span class="chip" data-e="tech@brls.local" data-p="officer123">tech@ (NGO Technical Officer)</span>
+          <span class="chip" data-e="applicant@nrrs.local" data-p="demo123">applicant@nrrs.local / demo123</span>
+          <span class="chip" data-e="tech@nrrs.local" data-p="officer123">tech@nrrs.local (NGO Technical Officer)</span>
           <span class="chip" data-e="senior@nrrs.local" data-p="officer123">senior@nrrs.local (Senior NGO Officer)</span>
-          <span class="chip" data-e="director@brls.local" data-p="officer123">director@</span>
+          <span class="chip" data-e="director@nrrs.local" data-p="officer123">director@nrrs.local (Director of NGOs)</span>
           <span class="chip" data-e="ag@nrrs.local" data-p="officer123">ag@nrrs.local (Registrar of NGOs)</span>
           <span class="chip" data-e="minister@nrrs.local" data-p="officer123">minister@nrrs.local (Minister)</span>
         </div>

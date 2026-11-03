@@ -34,10 +34,10 @@ npx serve .            # or:  python -m http.server 8000
 
 | Role                   | Password     | E-mail                 |
 |------------------------|--------------|------------------------|
-| Applicant              | `demo123`    | `applicant@brls.local` |
-| NGO Technical Officer  | `officer123` | `tech@brls.local`      |
+| Applicant              | `demo123`    | `applicant@nrrs.local` |
+| NGO Technical Officer  | `officer123` | `tech@nrrs.local`      |
 | Senior NGO Officer     | `officer123` | `senior@nrrs.local`    |
-| Director of NGOs       | `officer123` | `director@brls.local`  |
+| Director of NGOs       | `officer123` | `director@nrrs.local`  |
 | Registrar of NGOs (AG) | `officer123` | `ag@nrrs.local`        |
 | Minister (MoPND)       | `officer123` | `minister@nrrs.local`  |
 
